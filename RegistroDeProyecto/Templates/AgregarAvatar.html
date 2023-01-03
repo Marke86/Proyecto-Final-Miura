@@ -1,0 +1,22 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">AGREGAR AVATAR {{ usuario.username }}</h3>
+{% endblock %}
+
+{% block Formulario %}
+
+<form action="{% url 'AgregarAvatar' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+<table>
+{{ form.as_table }}
+</table>
+
+<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+<button class="btn btn-primary btn-block" type="submit">Agregar Avatar</button>
+</div>
+</form>
+
+{% endblock %}

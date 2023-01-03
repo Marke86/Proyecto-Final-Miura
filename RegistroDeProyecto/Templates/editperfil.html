@@ -1,0 +1,26 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">EDITAR PERFIL {{ nombreusuario }}</h3>
+{% endblock %}
+
+{% block Formulario %}
+
+<form action="{% url 'editarperfil' %}" method="POST">
+
+{% csrf_token %}
+
+<table>
+{{ form.as_table }}
+</table>
+
+<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+    <a class="btn btn-primary btn-block" href="{% url 'inicio' %}" >VOLVER</a>
+    <a class="btn btn-primary btn-block" href="{% url 'AgregarAvatar' %}">AGREGAR AVATAR</a>
+<button class="btn btn-primary btn-block" type="submit">GUARDAR</button>
+
+</form>
+
+{% endblock %}

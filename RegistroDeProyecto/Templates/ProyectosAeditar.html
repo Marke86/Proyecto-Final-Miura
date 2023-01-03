@@ -1,0 +1,36 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">PROYECTOS</h1>
+{% endblock %}
+
+{% block Formulario %}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="{% url 'ProyectoRegistro' %}">Agregar Proyecto</a></li>
+</ol>
+
+<table class="dataTable-table">
+    <tr>
+        <th>Código</th>
+        <th>Proyecto</th>
+        <th>Presupuesto Base</th>
+        <th>Descripción</th>
+        <th>Reporte</th>
+        <th>Eliminar</th>       
+    </tr>
+        
+    {% for Proyecto in proyect %}    
+    <tr>
+        <td>{{Proyecto.Codigo}}</td>
+        <td>{{Proyecto.Nombre}}</td>
+        <td>MUSD {{Proyecto.PresupuestoBase}}</td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'descripcion' Proyecto.id %}">+</a></td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'AgregarReporte' Proyecto.id %}">+</a></td>
+        <td><a class="btn btn-danger btn-block" href="{% url 'EliminarProyecto' Proyecto.id %}">Eliminar</a></td>
+    
+    </tr>
+    {% endfor %} 
+{% endblock %}

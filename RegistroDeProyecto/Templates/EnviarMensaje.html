@@ -1,0 +1,22 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">Enviar Mensaje</h3>
+<h5 class="text-center font-weight-light my-4">A {{user.first_name}}</h5>
+{% endblock %}
+
+{% block Formulario %}
+<form action="{% url 'EnviarMensaje' user.id %}" method="POST" enctype="multipart/form-data"> {% csrf_token %} 
+    <table>
+
+        {{ mensaje.as_table }}
+        
+    </table>
+    <div class="me-4">
+    <a class="btn btn-primary btn-block" href="{% url 'inicio' %}">VOLVER</a>
+    <input class="btn btn-primary btn-block" type="submit", value="Enviar"> 
+    </div>
+</form>
+{% endblock %}

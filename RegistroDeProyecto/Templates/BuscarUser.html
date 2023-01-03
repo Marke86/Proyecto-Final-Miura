@@ -1,0 +1,28 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">MENSAJE</h3>
+{% endblock %}
+
+{% block Formulario %}
+<!-- envia los datos de la busqueda a Resultados -->
+<div class="text-center">
+
+<div class="text-center">Busque al usuario al que quiere enviar el mensaje</div>
+<div class="text-center">Busque por Nombre de usuario</div> 
+<form action="{% url 'ResultadoUsuario' %}" method="GET"> 
+
+    <input type="text" name="first_name" id="first_name"><BR/>
+
+    <input type="submit" value="Buscar Usuario" CLASS="btn btn-primary btn-block my-4">
+
+
+</form>
+</div>
+{{mensaje}}
+
+
+
+{% endblock %}

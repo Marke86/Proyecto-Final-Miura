@@ -1,0 +1,31 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">ABOUT</h1>
+{% endblock %}
+
+{% block Formulario %}
+
+<h4>Quien Soy?</h4>
+<p>Soy <strong>Marcos Miura</strong> y me desempeño como ingeniero civil y durante mi carrera me he desempeñado dentro del área de oficina técnica, inspección y coordinación de varios proyectos de gran magnitud, en distintas áreas como Obras Hidráulicas,Oil & Gas, Obras Eléctricas y proyectos de energía renovable, hoy en dia cumplo la funcion de lider de proyecto en la industra petrolera.</p>
+<h4>De que trata el Proyecto Final</h4>
+<p>La temática del seleccionada para el proyecto fue la de desarrollar un proyecto con diferentes apps donde se pueda llevar el registro de diferentes proyectos. La idea principal es la de crear registrar un proyecto y a este proyecto poder ir cargando diferentes atributos como descripción, costos, y reportes del proyecto.</p>
+<h4>Que se viene?</h4>
+<p>En futuras entregas se incorporaran diferenstes apps para llevar un registro mas completo de los proyectos, se va agregar la app de seguimiento físico, mas vistas de reportes como reportes de todos los materiales que se han comprado para cada proyecto, entre otras mejoras.</p>
+<h5>URLS</h5>
+<ul>
+    <li><a class="small" href="{% url 'inicio' %}">"inicio"</a> ---> Pagina de inicio</li>
+    <li><a class="small" href="{% url 'ProyectoRegistro' %}">"ProyectoRegistro"</a> ---> Pagina para registrar los proyectos</li>
+    <li><a class="small" href="{% url 'descripcion' 13 %}">"descripcion"</a> ---> Pagina para agregar descripcion a cada proyecto</li>
+    <li><a class="small" href="{% url 'proyectosCargados' %}">"proyectosCargados"</a> ---> Pagina para ver todos los proyectos cargados </li>
+    <li><a class="small" href="{% url 'AgregarAvatar'  %}">"AgregarAvatar"</a>" ---> Pagina para agregar una imagen de perfil</li>
+    <li><a class="small" href="{% url 'AgregarReporte' 13 %}">"AgregarReporte"</a> ---> Pagina para agregar un reporte a cada proyecto</li>
+    <li><a class="small" href="{% url 'VerMensajes' %}">"VerMensajes"</a> ---> Pagina para ver los mensajes recibidos</li>
+</ul>
+
+
+
+
+{% endblock %}

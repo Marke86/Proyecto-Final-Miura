@@ -1,0 +1,29 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">PROYECTOS</h1>
+{% endblock %}
+
+{% block Formulario %}
+
+<table class="dataTable-table">
+    <tr>
+        <th>Codigo</th>
+        <th>Proyecto</th>
+        <th>Presupuesto Base</th>
+              
+    </tr>
+        
+    {% for Proyecto in proyect %}         
+    <tr>
+           
+        <td>{{Proyecto.Codigo}}</td>
+        <td><a class="small" href="{% url 'Reportes' Proyecto.id %}">{{Proyecto.Nombre}}</a></td>
+        <td>MUSD {{Proyecto.PresupuestoBase}}</td>
+        
+        
+    </tr>
+    {% endfor %} 
+{% endblock %}

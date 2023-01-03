@@ -1,0 +1,29 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">USUARIOS</h1>
+{% endblock %}
+
+{% block Formulario %}
+
+<table class="dataTable-table">
+    <tr>
+        <th>Usuario</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Enviar Mensaje</th>
+        
+              
+    </tr>
+        
+    {% for U in usuario %}         
+    <tr>           
+        <td>{{U.username}}</td>
+        <td>{{U.first_name}}</td>
+        <td>{{U.last_name}}</td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'EnviarMensaje' U.id %}">Enviar Mensaje</a></td>        
+    </tr>
+    {% endfor %} 
+{% endblock %}

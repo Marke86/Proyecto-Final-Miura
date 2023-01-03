@@ -1,0 +1,32 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">COSTOS</h1>
+{% endblock %}
+
+{% block Formulario %}
+
+<table class="dataTable-table">
+    <tr>
+        <th>Código</th>
+        <th>Proyecto</th>
+        <th>Costo Ingenieria</th>
+        <th>Costo Montaje</th>
+        <th>Costo Materiales</th>
+
+
+    </tr>
+        
+    {% for Proyecto in proyect %}    
+    <tr>
+        <td>{{Proyecto.Codigo}}</td>
+        <td>{{Proyecto.Nombre}}</td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'costoing' Proyecto.id %}">Agregar</a></td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'costomontaje' Proyecto.id %}">Agregar</a></td>
+        <td><a class="btn btn-primary btn-block" href="{% url 'costomateriales' Proyecto.id %}">Agregar</a></td>
+    
+    </tr>
+    {% endfor %} 
+{% endblock %}

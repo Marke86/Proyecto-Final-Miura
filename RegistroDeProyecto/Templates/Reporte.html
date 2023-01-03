@@ -1,0 +1,55 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">{{nombre}}</h1>
+
+{% endblock %}
+
+
+{% block Formulario %}
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-primary text-white mb-4">
+            <div class="card-body">MUSD {{PresupuestoBase}}</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">                    
+                <div class="small text-white">Presupuesto Base</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-warning text-white mb-4">
+            <div class="card-body">MUSD {{CostoIng}}</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="small text-white">Costo Ingenieria</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-success text-white mb-4">
+            <div class="card-body">MUSD {{CostoMontaje}}</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="small text-white">Costo Montaje</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-danger text-white mb-4">
+            <div class="card-body">MUSD {{CostoMateriales}}</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+                <div class="small text-white">Costo Materiales</div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4>REPORTES</h4>
+{% for r in reportes %}
+<h6>{{r.Nombredereporte}}</h6>
+<div><img src="{{r.imagenReporte.url}}" height="150" width="150"/><p>{{r.reporte}}</p></div>
+<hr class="dropdown-divider"/>
+{% endfor %}        
+{% endblock %}

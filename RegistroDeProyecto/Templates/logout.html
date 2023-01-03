@@ -1,0 +1,20 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">USTED HA SALIDO DEL SISTEMA</h3>
+{% endblock %}
+
+{% block Formulario %}
+
+
+</div>
+<div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+    <a class="small" href="{% url 'register' %}" >REGISTRAR</a>
+    <a class="small" href="{% url 'login' %}" >INGRESAR</a>
+</div>
+</form>
+
+{% endblock %}
+ 

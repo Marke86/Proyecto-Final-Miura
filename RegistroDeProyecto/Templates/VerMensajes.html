@@ -1,0 +1,22 @@
+{% extends "PadreReportes.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h1 class="mt-4">MENSAJES</h1>
+{% endblock %}
+
+{% block Formulario %}
+    {% if Msj == "NO" %}
+    La cantidad de mensajes es cero
+    {% else %}  
+    {% for M in Msj %}
+    <hr class="dropdown-divider"/>         
+    <p>{{M.MsjText}}</p>
+    <hr class="dropdown-divider"/>
+    {% endfor %}
+    {% endif %} 
+   
+
+{% endblock %}
+

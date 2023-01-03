@@ -1,0 +1,26 @@
+{% extends "Padre_Registro.html" %}
+
+{% load static %}
+
+{% block Titulo %}
+<h3 class="text-center font-weight-light my-4">CARGA DE PROYECTO</h3>
+<br/>
+<h6 class="text-center font-weight-light my-4"> Descripcion {{proy.Nombre}}</h6>
+{% endblock %}
+
+{% block Formulario %}
+<form action="{% url 'descripcion' proy.id %}" method="POST"> {% csrf_token %} 
+    <table>
+
+        {{ descripcion.as_table }}
+        
+    </table>
+    <div class="me-4">
+    <input class="btn btn-primary btn-block" type="submit", value="Enviar"> 
+    </div>
+</form>
+
+<a class="btn btn-primary btn-block" href="{% url 'inicio' %}">VOLVER</a>
+
+{% endblock %}
+
